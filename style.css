@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Play', sans-serif;
+    background-image:  url(martim-braz-520158-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    color: #333;
+}
+
+.game-box {
+    opacity: 0.95;
+    width: 80vw;
+    padding: 50px 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+}
+
+.players {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.player-0,
+.player-1 {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.player-0,
+.player-0__score-global {
+    padding-left: 15px;
+}
+
+.player-1,
+.player-1__score-global {
+    padding-right: 15px;
+}
+
+.player-0__name,
+.player-1__name,
+.player-0__score-global,
+.player-1__score-global,
+.score-round__value {
+    font-size: 48px;
+}
+
+.player-1 {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.player-0__lives,
+.player-1__lives {
+    display: flex;
+    align-items: center;
+}
+
+.player-1__lives {
+    flex-direction: row-reverse;
+}
+
+.player-0__heart,
+.player-1__heart {
+    width: 50px;
+    height: 50px;
+    background-image: url(iconmonstr-favorite-1-32.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: opacity 1s ease-out;
+}
+
+.player-0__heart:first-child {
+    margin-left: 15px;
+}
+.player-1__heart:first-child {
+    margin-right: 15px;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-between;
+}
+
+.answers {
+    font-size: 30px;
+}
+
+.answers__list {
+    list-style: none;
+}
+
+.answers__item {
+    width: 40%;
+    margin: 0 auto;
+    display: grid;
+    align-items: space-between;
+    grid-template-columns: 45px auto 45px;
+    text-transform: uppercase;
+}
+
+.score-round {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.active {
+    background-color: #f6e8c3;
+}
+
+.lost-live {
+    opacity: 0;
+}
