@@ -64,7 +64,7 @@ function lostLive(playerNr) {
   } else if (playerNr == 1) {
     player1Lives[lives[1] - 1].classList.add("hide");
   }
-  lives[player]--;
+  lives[playerNr]--;
 }
 
 function cleanBoard(answersAmount = 7) {
@@ -75,6 +75,9 @@ function cleanBoard(answersAmount = 7) {
   for (let i = 0; i < answersAmount; i++) {
     answersBoard.innerHTML += `<li class="answers__item"><span class="number">${i + 1}.</span><span class="answer">...........................</span><span class="points">00</span></li>`;
   }
+
+  player0Lives.forEach(live => live.classList.remove("hide"));
+  player1Lives.forEach(live => live.classList.remove("hide"));
 
   player0.classList.remove("active");
   player1.classList.remove("active");
