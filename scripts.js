@@ -9,7 +9,7 @@ const roundScoreDisp = document.querySelector(".score-round__value");
 const player0Lives = document.querySelectorAll(".player-0__heart");
 const player1Lives = document.querySelectorAll(".player-1__heart");
 
-lives = [3, 3];
+let lives = [3, 3];
 
 function markActivePlayer(playerNr) {
   if (playerNr == 0) {
@@ -78,6 +78,8 @@ function cleanBoard(answersAmount = 7) {
 
   player0Lives.forEach(live => live.classList.remove("hide"));
   player1Lives.forEach(live => live.classList.remove("hide"));
+
+  lives = [3, 3]
 
   player0.classList.remove("active");
   player1.classList.remove("active");
