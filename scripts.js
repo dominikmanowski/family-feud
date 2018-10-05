@@ -2,12 +2,13 @@ const player0 = document.querySelector(".player-0");
 const player1 = document.querySelector(".player-1");
 const answersBoard = document.querySelector(".answers__list");
 let answers = document.querySelectorAll(".answer");
-const answersPoints = document.querySelectorAll(".points");
+let answersPoints = document.querySelectorAll(".points");
 const player0ScoreDisp = document.querySelector(".player-0__score-global");
 const player1ScoreDisp = document.querySelector(".player-1__score-global");
 const roundScoreDisp = document.querySelector(".score-round__value");
 const player0Lives = document.querySelectorAll(".player-0__heart");
 const player1Lives = document.querySelectorAll(".player-1__heart");
+const failAudio = new Audio("fail.ogg");
 
 let lives = [3, 3];
 let questionID = -1;
@@ -65,6 +66,7 @@ function lostLive(playerNr) {
   } else if (playerNr == 1) {
     player1Lives[lives[1] - 1].classList.add("hide");
   }
+  failAudio.play();
   lives[playerNr]--;
 }
 
@@ -87,6 +89,7 @@ function cleanBoard(answersAmount = 7) {
 
   roundScoreDisp.textContent = "000";
   answers = document.querySelectorAll(".answer");
+  answersPoints = document.querySelectorAll(".points");
 }
 
 function apiUpdate()
