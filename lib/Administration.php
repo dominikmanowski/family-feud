@@ -16,6 +16,7 @@ class Administration
 	{
 		$b = new Board();
 		$b->incrementQuestionID();
+		$b->resetLifes();
 		$max = count(json_decode(file_get_contents("db/questions/".$b->getRound().".json"), true));
 		if($b->getQuestionID() === $max){
 			if($b->getRound() === "final"){

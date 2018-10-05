@@ -139,4 +139,15 @@ class Board implements JsonSerializable
 		}
 		$this->bufor = 0;
 	}
+	
+	public function getBufor() : int
+	{
+		return $this->bufor;
+	}
+	
+	public function resetLifes()
+	{
+		$this->teamA->lives = 3;
+		$this->teamB->lives = 3;
+	}
 }

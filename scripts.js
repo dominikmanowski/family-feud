@@ -10,6 +10,7 @@ const player0Lives = document.querySelectorAll(".player-0__heart");
 const player1Lives = document.querySelectorAll(".player-1__heart");
 
 let lives = [3, 3];
+let questionID = -1;
 
 function markActivePlayer(playerNr) {
   if (playerNr == 0) {
@@ -86,3 +87,49 @@ function cleanBoard(answersAmount = 7) {
 
   roundScoreDisp.textContent = "000";
 }
+
+function apiUpdate()
+{
+	$.post(window.location.href+"api.php", {"Qid" : questionID}, function(result){
+		var data = JSON.parse(result);
+		if(data["action"] === "wait"){
+			return;
+		}
+		else if(data["action"] === "clean"){
+			cleanBoard(data["answersAmount"]);
+			displayPlayerScore(0, data["scoreA"]);
+			displayPlayerScore(1, data["scoreB"]);
+			questionID = data["Qid"];
+		}
+		else if(data["action"] === "update"){
+			displayPlayerScore(0, data["scoreA"]);
+			displayPlayerScore(1, data["scoreB"]);
+			displayRoundScore(data["roundScore"]);
+			while(lives[0] > data["livesA"])
+			{
+				lostLive(0);
+			}
+			while(lives[1] > data["livesB"])
+			{
+				lostLive(1);
+			}
+			
+			for(var i = 0; i < data["answersAmount"]; i += 1)
+			{
+				if(data["answers"][i]["isHidden"] == false){
+					displayAnswer(i, data["answers"][i]["answer"], data["answers"][i]["points"]);
+				}
+			}
+			
+			if(data["activePlayer"] === "A"){
+				markActivePlayer(0);
+			}
+			else if(data["activePlayer"] === "B"){
+				markActivePlayer(1);
+			}
+			questionID = data["Qid"];
+		}
+	});
+}
+
+var timer = setInterval(apiUpdate, 1000);
