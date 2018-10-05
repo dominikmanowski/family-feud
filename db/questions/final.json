@@ -1,0 +1,187 @@
+[
+	{
+		"question" : "Czym latamy?",
+		"answers" : [
+			{
+				"answer" : "samolotem",
+				"points" : 46,
+				"isHidden" : true
+			},
+			{
+				"answer" : "helikopterem",
+				"points" : 33,
+				"isHidden" : true
+			},
+			{
+				"answer" : "dronem",
+				"points" : 25,
+				"isHidden" : true
+			},
+			{
+				"answer" : "paralotnią",
+				"points" : 21,
+				"isHidden" : true
+			},
+			{
+				"answer" : "rakietą",
+				"points" : 17,
+				"isHidden" : true
+			},
+			{
+				"answer" : "balonem",
+				"points" : 12,
+				"isHidden" : true
+			}
+		]
+	},
+	{
+		"question" : "Coś świecącego",
+		"answers" : [
+			{
+				"answer" : "żarówka",
+				"points" : 42,
+				"isHidden" : true
+			},
+			{
+				"answer" : "choinka",
+				"points" : 33,
+				"isHidden" : true
+			},
+			{
+				"answer" : "biżuteria",
+				"points" : 29,
+				"isHidden" : true
+			},
+			{
+				"answer" : "złoto",
+				"points" : 24,
+				"isHidden" : true
+			},
+			{
+				"answer" : "cekiny",
+				"points" : 17,
+				"isHidden" : true
+			},
+			{
+				"answer" : "lampki",
+				"points" : 13,
+				"isHidden" : true
+			},
+			{
+				"answer" : "odblask",
+				"points" : 5,
+				"isHidden" : true
+			}
+		]
+	},
+	{
+		"question" : "Tylko dla dorosłych",
+		"answers" : [
+			{
+				"answer" : "alkochol",
+				"points" : 39,
+				"isHidden" : true
+			},
+			{
+				"answer" : "papierosy",
+				"points" : 36,
+				"isHidden" : true
+			},
+			{
+				"answer" : "serial",
+				"points" : 28,
+				"isHidden" : true
+			},
+			{
+				"answer" : "film",
+				"points" : 24,
+				"isHidden" : true
+			},
+			{
+				"answer" : "klub",
+				"points" : 17,
+				"isHidden" : true
+			},
+			{
+				"answer" : "pornografia",
+				"points" : 10,
+				"isHidden" : true
+			}
+		]
+	},
+	{
+		"question" : "Co nas usypia?",
+		"answers" : [
+			{
+				"answer" : "nauka",
+				"points" : 46,
+				"isHidden" : true
+			},
+			{
+				"answer" : "alkohol",
+				"points" : 32,
+				"isHidden" : true
+			},
+			{
+				"answer" : "muzyka",
+				"points" : 28,
+				"isHidden" : true
+			},
+			{
+				"answer" : "książka",
+				"points" : 25,
+				"isHidden" : true
+			},
+			{
+				"answer" : "telewizja",
+				"points" : 19,
+				"isHidden" : true
+			},
+			{
+				"answer" : "jazda autobusem",
+				"points" : 16,
+				"isHidden" : true
+			},
+			{
+				"answer" : "telefon",
+				"points" : 7,
+				"isHidden" : true
+			}
+		]
+	},
+	{
+		"question" : "Czego nie zjadłbyś przed randką?",
+		"answers" : [
+			{
+				"answer" : "czosnek",
+				"points" : 48,
+				"isHidden" : true
+			},
+			{
+				"answer" : "fasola",
+				"points" : 37,
+				"isHidden" : true
+			},
+			{
+				"answer" : "śledź",
+				"points" : 26,
+				"isHidden" : true
+			},
+			{
+				"answer" : "cebula",
+				"points" : 21,
+				"isHidden" : true
+			},
+			{
+				"answer" : "szczypior",
+				"points" : 15,
+				"isHidden" : true
+			},
+			{
+				"answer" : "warzywo strączkowe",
+				"points" : 9,
+				"isHidden" : true
+			}
+		]
+	}
+]

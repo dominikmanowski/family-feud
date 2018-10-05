@@ -1,0 +1,302 @@
+[
+	{
+		"question" : "Co możemy rozładować?",
+		"answers" : [
+			{
+				"answer" : "ciężarówkę",
+				"points" : 30,
+				"isHidden" : true
+			},
+			{
+				"answer" : "stres",
+				"points" : 25,
+				"isHidden" : true
+			},
+			{
+				"answer" : "napięcie",
+				"points" : 20,
+				"isHidden" : true
+			},
+			{
+				"answer" : "telefon",
+				"points" : 15,
+				"isHidden" : true
+			},
+			{
+				"answer" : "baterie",
+				"points" : 10,
+				"isHidden" : true
+			}
+		]
+	},
+	{
+		"question" : "Jaki rok nie zaczyna się od 1 stycznia?",
+		"answers" : [
+			{
+				"answer" : "szkolny",
+				"points" : 30,
+				"isHidden" : true
+			},
+			{
+				"answer" : "świetlny",
+				"points" : 25,
+				"isHidden" : true
+			},
+			{
+				"answer" : "liturgiczny",
+				"points" : 20,
+				"isHidden" : true
+			},
+			{
+				"answer" : "akademicki",
+				"points" : 15,
+				"isHidden" : true
+			},
+			{
+				"answer" : "chiński",
+				"points" : 10,
+				"isHidden" : true
+			}
+		]
+	},
+	{
+		"question" : "Sport, w którym walczymy z przeciwnikiem, ale go nie dotykamy",
+		"answers" : [
+			{
+				"answer" : "szachy",
+				"points" : 30,
+				"isHidden" : true
+			},
+			{
+				"answer" : "ping pong",
+				"points" : 25,
+				"isHidden" : true
+			},
+			{
+				"answer" : "lekkoatletyka",
+				"points" : 20,
+				"isHidden" : true
+			},
+			{
+				"answer" : "skoki narciarskie",
+				"points" : 15,
+				"isHidden" : true
+			},
+			{
+				"answer" : "siatkówka",
+				"points" : 10,
+				"isHidden" : true
+			}
+		]
+	},
+	{
+		"question" : "Na lekcji można być",
+		"answers" : [
+			{
+				"answer" : "nieobecny",
+				"points" : 30,
+				"isHidden" : true
+			},
+			{
+				"answer" : "nieprzygotowany",
+				"points" : 25,
+				"isHidden" : true
+			},
+			{
+				"answer" : "skupiony",
+				"points" : 20,
+				"isHidden" : true
+			},
+			{
+				"answer" : "cicho",
+				"points" : 15,
+				"isHidden" : true
+			},
+			{
+				"answer" : "obecny",
+				"points" : 10,
+				"isHidden" : true
+			}
+		]
+	},
+	{
+		"question" : "Włoska marka samochodu",
+		"answers" : [
+			{
+				"answer" : "lamborghini",
+				"points" : 30,
+				"isHidden" : true
+			},
+			{
+				"answer" : "ferrari",
+				"points" : 25,
+				"isHidden" : true
+			},
+			{
+				"answer" : "alfa romeo",
+				"points" : 20,
+				"isHidden" : true
+			},
+			{
+				"answer" : "fiat",
+				"points" : 15,
+				"isHidden" : true
+			},
+			{
+				"answer" : "maserati",
+				"points" : 10,
+				"isHidden" : true
+			}
+		]
+	},
+	{
+		"question" : "Co możemy otwierać?",
+		"answers" : [
+			{
+				"answer" : "działalność",
+				"points" : 30,
+				"isHidden" : true
+			},
+			{
+				"answer" : "okno",
+				"points" : 25,
+				"isHidden" : true
+			},
+			{
+				"answer" : "drzwi",
+				"points" : 20,
+				"isHidden" : true
+			},
+			{
+				"answer" : "oczy",
+				"points" : 15,
+				"isHidden" : true
+			},
+			{
+				"answer" : "książkę",
+				"points" : 10,
+				"isHidden" : true
+			}
+		]
+	},
+	{
+		"question" : "Stacja, do której nie dojeżdża pociąg",
+		"answers" : [
+			{
+				"answer" : "benzynowa",
+				"points" : 30,
+				"isHidden" : true
+			},
+			{
+				"answer" : "radiowa",
+				"points" : 25,
+				"isHidden" : true
+			},
+			{
+				"answer" : "kosmiczna",
+				"points" : 20,
+				"isHidden" : true
+			},
+			{
+				"answer" : "telewizyjna",
+				"points" : 15,
+				"isHidden" : true
+			},
+			{
+				"answer" : "badawcza",
+				"points" : 10,
+				"isHidden" : true
+			}
+		]
+	},
+	{
+		"question" : "Co może być czarne?",
+		"answers" : [
+			{
+				"answer" : "???",
+				"points" : 30,
+				"isHidden" : true
+			},
+			{
+				"answer" : "humor",
+				"points" : 25,
+				"isHidden" : true
+			},
+			{
+				"answer" : "magia",
+				"points" : 20,
+				"isHidden" : true
+			},
+			{
+				"answer" : "godzina",
+				"points" : 15,
+				"isHidden" : true
+			},
+			{
+				"answer" : "lista",
+				"points" : 10,
+				"isHidden" : true
+			}
+		]
+	},
+	{
+		"question" : "Nielegalny narkotyk",
+		"answers" : [
+			{
+				"answer" : "marihuana",
+				"points" : 30,
+				"isHidden" : true
+			},
+			{
+				"answer" : "mefedron",
+				"points" : 25,
+				"isHidden" : true
+			},
+			{
+				"answer" : "kokaina",
+				"points" : 20,
+				"isHidden" : true
+			},
+			{
+				"answer" : "LSD",
+				"points" : 15,
+				"isHidden" : true
+			},
+			{
+				"answer" : "amfetamina",
+				"points" : 10,
+				"isHidden" : true
+			}
+		]
+	},
+	{
+		"question" : "Jeździ, dzięki sile człowieka",
+		"answers" : [
+			{
+				"answer" : "rolki",
+				"points" : 30,
+				"isHidden" : true
+			},
+			{
+				"answer" : "rower",
+				"points" : 25,
+				"isHidden" : true
+			},
+			{
+				"answer" : "deskorolka",
+				"points" : 20,
+				"isHidden" : true
+			},
+			{
+				"answer" : "hulajnoga",
+				"points" : 15,
+				"isHidden" : true
+			},
+			{
+				"answer" : "monocykl",
+				"points" : 10,
+				"isHidden" : true
+			}
+		]
+	}
+]
