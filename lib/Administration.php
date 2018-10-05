@@ -66,4 +66,9 @@ class Administration
 		$q->save();
 		$b->save();
 	}
+	
+	static function updateBoard()
+	{
+		file_put_contents("db/apiHash.json", json_encode([hash('sha512', "NotEvenJSON")]));
+	}
 }
