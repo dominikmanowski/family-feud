@@ -20,9 +20,7 @@ class Security
 			return Security::Verify();
 		}
 		
-		print "<center><form method=\"POST\"><input name=\"password\" type=\"password\" required autofocus><button type=\"submit\">Verify</button></form></center>";
-		
-		return true;
+		die("<center><form method=\"POST\"><input name=\"password\" type=\"password\" required autofocus><button type=\"submit\">Verify</button></form></center>");
 	}
 }
 
