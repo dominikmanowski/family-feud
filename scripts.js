@@ -1,7 +1,7 @@
 const player0 = document.querySelector(".player-0");
 const player1 = document.querySelector(".player-1");
 const answersBoard = document.querySelector(".answers__list");
-const answers = document.querySelectorAll(".answer");
+let answers = document.querySelectorAll(".answer");
 const answersPoints = document.querySelectorAll(".points");
 const player0ScoreDisp = document.querySelector(".player-0__score-global");
 const player1ScoreDisp = document.querySelector(".player-1__score-global");
@@ -86,6 +86,7 @@ function cleanBoard(answersAmount = 7) {
   player1.classList.remove("active");
 
   roundScoreDisp.textContent = "000";
+  answers = document.querySelectorAll(".answer");
 }
 
 function apiUpdate()
