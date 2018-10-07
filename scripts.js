@@ -18,6 +18,7 @@ const roundScoreDisp = document.querySelector(".score-round__value");
 const player0Lives = document.querySelectorAll(".player-0__heart");
 const player1Lives = document.querySelectorAll(".player-1__heart");
 const failAudio = new Audio("fail.ogg");
+const buzzerAudio = new Audio("buzzer.ogg");
 
 let finalAnswersBoard;
 
@@ -77,6 +78,7 @@ function lostLive(playerNr) {
   } else if (playerNr == 1) {
     player1Lives[lives[1] - 1].classList.add("hide");
   }
+  failAudio.currentTime = 0;
   failAudio.play();
   lives[playerNr]--;
 }
@@ -131,6 +133,11 @@ function displayFinalAnswer(i, answer, points, player) {
     finalAnswers1[i].textContent = answer;
     finalPoints1[i].textContent = points;
   }
+}
+
+function playBuzzer() {
+  buzzerAudio.currentTime = 0;
+  buzzerAudio.play();
 }
 
 function apiUpdate()
