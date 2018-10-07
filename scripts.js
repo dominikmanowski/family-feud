@@ -1,14 +1,25 @@
+const players = document.querySelector(".players")
 const player0 = document.querySelector(".player-0");
 const player1 = document.querySelector(".player-1");
+const player0name = document.querySelector(".player-0__name");
+const player1name = document.querySelector(".player-1__name");
 const answersBoard = document.querySelector(".answers__list");
+const regularAnswers = document.querySelector(".answers");
+const finalAnswers = document.querySelector(".final-answrs");
 let answers = document.querySelectorAll(".answer");
+const finalAnswers0 = document.querySelectorAll(".final-answer-0");
+const finalAnswers1 = document.querySelectorAll(".final-answer-1");
 let answersPoints = document.querySelectorAll(".points");
+const finalPoints0 = document.querySelectorAll(".final-points-0");
+const finalPoints1 = document.querySelectorAll(".final-points-1");
 const player0ScoreDisp = document.querySelector(".player-0__score-global");
 const player1ScoreDisp = document.querySelector(".player-1__score-global");
 const roundScoreDisp = document.querySelector(".score-round__value");
 const player0Lives = document.querySelectorAll(".player-0__heart");
 const player1Lives = document.querySelectorAll(".player-1__heart");
 const failAudio = new Audio("fail.ogg");
+
+let finalAnswersBoard;
 
 let lives = [3, 3];
 let questionID = -1;
@@ -90,6 +101,26 @@ function cleanBoard(answersAmount = 7) {
   roundScoreDisp.textContent = "000";
   answers = document.querySelectorAll(".answer");
   answersPoints = document.querySelectorAll(".points");
+}
+
+function showFinalBoard(winner) {  
+    
+  if (winner == 0) {
+    player0name.classList.add("center")
+    player1.classList.add("hide");
+    player0Lives.forEach(live => live.classList.add("hide"))
+    
+  } else if (winner == 1) {
+    player1name.classList.add("center")
+    player0.classList.add("hide");
+    player1Lives.forEach(live => live.classList.add("hide"))
+  }
+  
+  player0ScoreDisp.innerHTML = "000"
+  player1ScoreDisp.innerHTML = "000"
+  regularAnswers.classList.add("d-none");
+  finalAnswers.classList.remove("d-none");
+
 }
 
 function apiUpdate()
