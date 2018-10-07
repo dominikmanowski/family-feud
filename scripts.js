@@ -123,6 +123,16 @@ function showFinalBoard(winner) {
 
 }
 
+function displayFinalAnswer(i, answer, points, player) {
+  if (player == 0) {
+    finalAnswers0[i].textContent = answer;
+    finalPoints0[i].textContent = points;
+  } else if (player == 1) {
+    finalAnswers1[i].textContent = answer;
+    finalPoints1[i].textContent = points;
+  }
+}
+
 function apiUpdate()
 {
 	$.post(window.location.href+"api.php", {"Qid" : questionID}, function(result){
