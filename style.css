@@ -56,7 +56,7 @@ body {
 .player-0__score-global,
 .player-1__score-global,
 .score-round__value {
-    font-size: 48px;
+    font-size: 55px;
 }
 
 .player-1 {
@@ -94,19 +94,32 @@ body {
 .scores {
     display: flex;
     justify-content: space-between;
+    padding-top: 1rem;
 }
 
+.answers-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: stretch;
+    padding-top: 50px;
+}
+
+
 .answers {
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .answers__list,
 .final-answers__list {
     list-style: none;
     min-height: 280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width:
+}
+
+.final-answer__list:not(:last-child) {
+    padding-right: 2rem;
 }
 
 .answers__item,
@@ -117,27 +130,32 @@ body {
 .answer,
 .final-answer-0,
 .final-answer-1 {
-    flex-grow: 1;
-    margin-left: 1rem;
+    margin: 0 1rem;
 }
 
 .answers__item {
     width: 50%;
-    margin: 0 auto;
     text-transform: uppercase;
 }
-
+.final-answers-wrapper {
+    width: 100%;
+} 
 .final-answrs {
-    font-size: 37px;
     display: flex;
-    justify-content: space-around
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
+.final-answers__item {
+    font-size: 45px;
+    padding-top: 20px;
+}
 
 .score-round {
-    margin-top: 50px;
-    font-size: 48px;
-    text-align: center;
+    position: absolute;
+    left: 50%;
+    bottom: 4rem;
+    transform: translateX(-50%);
 }
 
 .active {
