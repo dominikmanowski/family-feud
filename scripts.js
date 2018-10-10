@@ -80,6 +80,7 @@ function lostLive(playerNr) {
     player1Lives[lives[1] - 1].classList.add("hide");
   }
   if(soundPlay){
+  	soundPlay = false;
   	failAudio.currentTime = 0;
   	failAudio.play();
   }
