@@ -24,6 +24,7 @@ let finalAnswersBoard;
 
 let lives = [3, 3];
 let questionID = -1;
+let soundPlay = true;
 
 function markActivePlayer(playerNr) {
   if (playerNr == 0) {
@@ -78,8 +79,10 @@ function lostLive(playerNr) {
   } else if (playerNr == 1) {
     player1Lives[lives[1] - 1].classList.add("hide");
   }
-  failAudio.currentTime = 0;
-  failAudio.play();
+  if(soundPlay){
+  	failAudio.currentTime = 0;
+  	failAudio.play();
+  }
   lives[playerNr]--;
 }
 
@@ -143,6 +146,7 @@ function playBuzzer() {
 function apiUpdate()
 {
 	$.post(window.location.href+"api.php", {"Qid" : questionID}, function(result){
+		soundPlay = true;
 		var data = JSON.parse(result);
 		if(data["action"] === "wait"){
 			return;
