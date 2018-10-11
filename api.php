@@ -9,7 +9,7 @@ if(!isset($_POST['Qid'])){
 	die("[]");
 }
 
-$lastHash = json_decode(file_get_contents("db/apiHash.json"), true)[0];
+@$lastHash = json_decode(file_get_contents("db/apiHash.json"), true)[0];
 $hash = hash('sha512', $b->getTeam("A")->lives."|".$b->getTeam("A")->score."|".$b->getTeam("B")->lives."|".$b->getTeam("B")->score."|".$b->getBufor()."|".$b->getActiveTeam()."|".$b->getQuestionID());
 
 if($lastHash === "startFinal" || $b->getRound() === "final"){

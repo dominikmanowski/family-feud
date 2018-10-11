@@ -51,6 +51,7 @@ class Administration
 			if($b->getTeam($opponent)->lives > 0){
 				$b->save();
 				Administration::changeTeam();
+				$b = new Board();
 				$b->takeLife();
 				$b->takeLife();
 				$b->save();
