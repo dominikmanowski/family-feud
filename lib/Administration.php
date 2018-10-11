@@ -81,4 +81,16 @@ class Administration
 	{
 		file_put_contents("db/apiHash.json", json_encode([hash('sha512', " ")]));
 	}
+	
+	static function showAnswers()
+	{
+		$q = new Question;
+		$no = count($q->getAnswers());
+		for($i = 0; $i < $no; ++$i)
+		{
+			$q->uncover($i);
+		}
+		$q->save();
+		Administration::updateBoard();
+	}
 }

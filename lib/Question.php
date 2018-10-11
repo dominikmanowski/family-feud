@@ -23,11 +23,11 @@ class Question implements JsonSerializable
 	public function jsonSerialize()
 	{
         $tab = ["question" => $this->question];
-        $tab["answers"] = [];
-        foreach($this->answers as $x)
+        $tab["answers"] = $this->answers;
+        /*foreach($this->answers as $x)
         {
         	array_push($tab["answers"], ["answer" => $x->answer, "points" => $x->points, "isHidden" => $x->isHidden]);
-        }
+        }*/
         return $tab;
     }
     
