@@ -4,6 +4,19 @@ require_once("Question.php");
 require_once("GUI.php");
 class Administration
 {
+	const startFinalVerificationString = "4D2R$%gdat7U6RFUYFUGDS98Y98Y98t&^r&^r^%dytfyufuow&d#o";
+
+	static function startFinal($verification)
+	{
+		if($verification !== Administration::startFinalVerificationString){
+			return;
+		}
+		$b = new Board();
+		$b->startFinal();
+		$b->save();
+		file_put_contents("db/apiHash.json", json_encode(["startFinal"]));
+		die( "<script>window.location.href=\"/finalAdmin.php\";</script>");
+	}
 	
 	static function changeTeam()
 	{
@@ -17,20 +30,14 @@ class Administration
 		$b = new Board();
 		$b->incrementQuestionID();
 		$b->resetLifes();
-		$max = count(json_decode(file_get_contents("db/questions/".$b->getRound().".json"), true));
+		$max = count(json_decode(file_get_contents("db/questions/regular.json"), true));
+		$b->save();
 		if($b->getQuestionID() === $max){
-			if($b->getRound() === "final"){
-				return;
-			}
-			else{
-				$b->startFinal();
-				file_put_contents("db/question.json", json_encode(json_decode(file_get_contents("db/questions/final.json"), true)[0]));
-			}
+			Administration::startFinal(Administration::startFinalVerificationString);
 		}
 		else{
 			file_put_contents("db/question.json", json_encode(json_decode(file_get_contents("db/questions/".$b->getRound().".json"), true)[$b->getQuestionID()]));
 		}
-		$b->save();
 	}
 	
 	static function wrongAnswer()
@@ -44,15 +51,18 @@ class Administration
 			if($b->getTeam($opponent)->lives > 0){
 				$b->save();
 				Administration::changeTeam();
+				$b->takeLife();
+				$b->takeLife();
+				$b->save();
 				GUI::alert("Nastąpiła przymusowa zmiana strony");
 				return;
 			}
-			else{
+			/*else{
 				$b->save();
 				Administration::nextQuestion();
 				GUI::alert("Nastąpiła przymusowa zmiana pytania");
 				return;
-			}
+			}*/
 		}
 		$b->save();
 	}
@@ -69,6 +79,6 @@ class Administration
 	
 	static function updateBoard()
 	{
-		file_put_contents("db/apiHash.json", json_encode([hash('sha512', "NotEvenJSON")]));
+		file_put_contents("db/apiHash.json", json_encode([hash('sha512', " ")]));
 	}
 }

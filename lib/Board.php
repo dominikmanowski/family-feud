@@ -80,14 +80,11 @@ class Board implements JsonSerializable
 	public function changeActiveTeam()
 	{
 		if($this->active === "A"){
-			$this->teamA->score += $this->bufor;
 			$this->active = "B";
 		}
 		else if($this->active === "B"){
-			$this->teamB->score += $this->bufor;
 			$this->active = "A";
 		}
-		$this->bufor = 0;
 	}
 	
 	public function getTeam(string $name)

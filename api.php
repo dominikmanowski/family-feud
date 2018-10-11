@@ -12,7 +12,19 @@ if(!isset($_POST['Qid'])){
 $lastHash = json_decode(file_get_contents("db/apiHash.json"), true)[0];
 $hash = hash('sha512', $b->getTeam("A")->lives."|".$b->getTeam("A")->score."|".$b->getTeam("B")->lives."|".$b->getTeam("B")->score."|".$b->getBufor()."|".$b->getActiveTeam()."|".$b->getQuestionID());
 
-if($_POST['Qid'] != $b->getQuestionID()){	//clean
+if($lastHash === "startFinal" || $b->getRound() === "final"){
+	if($b->getTeam("A")->score > $b->getTeam("B")->score){
+		$winner = 1;
+	}
+	else{
+		$winner = 0;
+	}
+	$data = [
+		"action" => "startFinal",
+		"winner" => $winner
+	];
+}
+else if($_POST['Qid'] != $b->getQuestionID()){	//clean
 	$data = [
 		"action" => "clean",
 		"answersAmount" => count($q->getAnswers()),

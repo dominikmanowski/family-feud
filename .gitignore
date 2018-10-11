@@ -1,3 +1,5 @@
 db/board.json
 db/question.json
 db/apiHash.json
+db/finalBoard.json
+db/apiFinalHash.json

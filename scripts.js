@@ -149,7 +149,13 @@ function apiUpdate()
 	$.post(window.location.href+"api.php", {"Qid" : questionID}, function(result){
 		soundPlay = true;
 		var data = JSON.parse(result);
-		if(data["action"] === "wait"){
+		if(data["action"] === "startFinal"){
+			showFinalBoard(data["winner"]);
+			apiFinalUpdate();
+			clearInterval(timer);
+			timer = setInterval(apiFinalUpdate, 1000);
+		}
+		else if(data["action"] === "wait"){
 			return;
 		}
 		else if(data["action"] === "clean"){
@@ -185,6 +191,34 @@ function apiUpdate()
 				markActivePlayer(1);
 			}
 			questionID = data["Qid"];
+		}
+	});
+}
+
+function apiFinalUpdate()
+{
+	$.post(window.location.href+"apiFinal.php", {"Qid" : questionID}, function(result){
+		var data = JSON.parse(result);
+		let score = [0, 0]; 
+		if(data["action"] === "wait"){
+			return;
+		}
+		else if(data["action"] === "update"){
+			for(var player = 0; player < 2; player += 1)
+			{
+				for(var i = 0; i < data["answersAmount"][player]; i += 1)
+				{
+					displayFinalAnswer(i, data["answers"][player][i]["text"], data["answers"][player][i]["points"], player);
+					score[player] += data["answers"][player][i]["points"];
+				}
+				displayPlayerScore(player, score[player]);
+			}
+			
+			displayRoundScore(score[0] + score[1]);
+			questionID = data["Qid"];
+			if(data["makeSound"] == true){
+				playBuzzer();
+			}
 		}
 	});
 }
