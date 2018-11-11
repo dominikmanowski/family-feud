@@ -1,24 +1,39 @@
-const players = document.querySelector(".players")
-const player0 = document.querySelector(".player-0");
-const player1 = document.querySelector(".player-1");
-const player0name = document.querySelector(".player-0__name");
-const player1name = document.querySelector(".player-1__name");
-const answersBoard = document.querySelector(".answers__list");
-const regularAnswers = document.querySelector(".answers");
-const finalAnswers = document.querySelector(".final-answers-wrapper ");
-let answers = document.querySelectorAll(".answer");
-const finalAnswers0 = document.querySelectorAll(".final-answer-0");
-const finalAnswers1 = document.querySelectorAll(".final-answer-1");
-let answersPoints = document.querySelectorAll(".points");
-const finalPoints0 = document.querySelectorAll(".final-points-0");
-const finalPoints1 = document.querySelectorAll(".final-points-1");
-const player0ScoreDisp = document.querySelector(".player-0__score-global");
-const player1ScoreDisp = document.querySelector(".player-1__score-global");
-const roundScoreDisp = document.querySelector(".score-round__value");
-const player0Lives = document.querySelectorAll(".player-0__heart");
-const player1Lives = document.querySelectorAll(".player-1__heart");
+const select = name => document.querySelector(name)
+const selectAll = name => document.querySelector(name)
+
+const players = select(".players")
+const player0 = select(".player-0");
+const player1 = select(".player-1");
+const player0name = select(".player-0__name");
+const player1name = select(".player-1__name");
+const answersBoard = select(".answers__list");
+const regularAnswers = select(".answers");
+const finalAnswers = select(".final-answers-wrapper ");
+let answers = selectAll(".answer");
+const finalAnswers0 = selectAll(".final-answer-0");
+const finalAnswers1 = selectAll(".final-answer-1");
+let answersPoints = selectAll(".points");
+const finalPoints0 = selectAll(".final-points-0");
+const finalPoints1 = selectAll(".final-points-1");
+const player0ScoreDisp = select(".player-0__score-global");
+const player1ScoreDisp = select(".player-1__score-global");
+const roundScoreDisp = select(".score-round__value");
+const player0Lives = selectAll(".player-0__heart");
+const player1Lives = selectAll(".player-1__heart");
 const failAudio = new Audio("fail.ogg");
 const buzzerAudio = new Audio("buzzer.ogg");
+
+
+const pointsFormat = points => {
+  if (points < 10) {
+    return `00${points}`;
+  } else if (points < 100) {
+    return `0${points}`;
+  } else {
+    return `${points}`;
+  }
+} 
+
 
 let finalAnswersBoard;
 
@@ -42,32 +57,14 @@ function displayAnswer(i, answer, points) {
 }
 
 function displayRoundScore(roundScore) {
-  if (roundScore < 10) {
-    roundScoreDisp.textContent = `00${roundScore}`;
-  } else if (roundScore < 100) {
-    roundScoreDisp.textContent = `0${roundScore}`;
-  } else {
-    roundScoreDisp.textContent = roundScore;
-  }
+  roundScoreDisp.textContent = pointsFormat(roundScore);
 }
 
 function displayPlayerScore(playerNr, points) {
   if (playerNr == 0) {
-    if (points < 10) {
-      player0ScoreDisp.textContent = `00${points}`;
-    } else if (points < 100) {
-      player0ScoreDisp.textContent = `0${points}`;
-    } else {
-      player0ScoreDisp.textContent = points;
-    }
+    player0ScoreDisp.textContent = pointsFormat(points);
   } else if (playerNr == 1) {
-    if (points < 10) {
-      player1ScoreDisp.textContent = `00${points}`;
-    } else if (points < 100) {
-      player1ScoreDisp.textContent = `0${points}`;
-    } else {
-      player1ScoreDisp.textContent = points;
-    }
+    player1ScoreDisp.textContent = pointsFormat(points);
   }
 
   roundScoreDisp.textContent = "000";
@@ -122,6 +119,8 @@ function showFinalBoard(winner) {
     player1Lives.forEach(live => live.classList.add("hide"))
   }
   
+  player0.classList.remove("active");
+  player1.classList.remove("active");
   player0ScoreDisp.innerHTML = "000"
   player1ScoreDisp.innerHTML = "000"
   regularAnswers.classList.add("d-none");
@@ -137,6 +136,8 @@ function displayFinalAnswer(i, answer, points, player) {
     finalAnswers1[i].textContent = answer;
     finalPoints1[i].textContent = points;
   }
+
+
 }
 
 function playBuzzer() {
